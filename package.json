@@ -1,0 +1,19 @@
+{
+  "name": "gold2th-automation",
+  "version": "1.0.0",
+  "description": "automation for autheo",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env HEADLESS_MODE=true npx playwright test",
+    "test:headed": "npx playwright test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@synthetixio/synpress": "^3.7.2-beta.10",
+    "@types/node": "^20.12.7",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0"
+  }
+}
