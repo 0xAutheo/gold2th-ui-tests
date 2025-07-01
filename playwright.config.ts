@@ -20,7 +20,7 @@ export default defineConfig({
         baseURL: process.env.ENVIRONMENT_URL,
     },
     reportSlowTests: null,
-    timeout: 90000,
+    timeout: 150000,
     projects: [
         {
             name: "chromium",

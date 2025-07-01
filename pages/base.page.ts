@@ -10,7 +10,8 @@ export default class BasePage {
 
     async connectWallet(): Promise<void> {
         await this.page.getByRole('link', {name: 'Connect Wallet', exact: true}).click();
-        await this.page.getByRole('button', {name: 'Connect Wallet →'}).click();
+        await this.page.locator("//div[text()='Connect Wallet']").click()
+        //await this.page.getByRole('button', {name: 'Connect Wallet →'}).click();
         await this.page.getByTestId('rk-wallet-option-metaMask').click();
         await this.handleMetamaskFlow();
     }
@@ -20,5 +21,6 @@ export default class BasePage {
         await this.page.getByRole('button', {name: 'Authenticate with Autheo →'}).click();
         await metamask.confirmSignatureRequest();
         await this.page.getByRole('button', {name: 'Authorize Data Access →'}).click();
+
     }
 }
