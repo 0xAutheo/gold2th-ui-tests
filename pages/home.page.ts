@@ -1,4 +1,4 @@
-import {type Page} from "@playwright/test";
+import { type Page } from "@playwright/test";
 import BasePage from "./base.page";
 
 export default class HomePage extends BasePage {
@@ -10,6 +10,9 @@ export default class HomePage extends BasePage {
     }
 
     async navigate(): Promise<void> {
-        await this.page.goto(this.path);
+        const baseUrl = process.env.APP_URL || "http://localhost:8002";
+        const fullUrl = `${baseUrl}${this.path}`;
+        await this.page.goto(fullUrl);
+        await this.page.bringToFront(); // Ensure it's the active tab
     }
 }
